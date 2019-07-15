@@ -1,11 +1,14 @@
 package com.easy.live.streaming.user.config;
 
+import com.easy.live.streaming.user.cache.ShiroRedisCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.data.redis.core.RedisTemplate;
 
 
 /**
@@ -22,10 +25,18 @@ public class ShiroConfig {
     }
 
     @Bean
-    public SecurityManager securityManager() {
+    public DefaultWebSecurityManager securityManager(ShiroRedisCacheManager shiroRedisCacheManager) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(userShiroRealm());
+        securityManager.setCacheManager(shiroRedisCacheManager);
         return securityManager;
+    }
+
+    @Bean(name = "shiroRedisCacheManager")
+    @DependsOn(value = "redisTemplate")
+    public ShiroRedisCacheManager shiroRedisCacheManager(RedisTemplate redisTemplate){
+        ShiroRedisCacheManager shiroRedisCacheManager = new ShiroRedisCacheManager(redisTemplate);
+        return  shiroRedisCacheManager;
     }
 
     @Bean
