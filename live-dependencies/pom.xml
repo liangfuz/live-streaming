@@ -74,7 +74,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.24</version>
+                <version>1.2.31</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -141,7 +141,6 @@
                 <version>2.5.0</version>
             </dependency>
 
-            <!-- httpclient -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
@@ -154,7 +153,6 @@
                 <version>2.2.3</version>
             </dependency>
 
-            <!--google 工具类 -->
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
@@ -182,34 +180,11 @@
                 <version>3.3.1</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.github.mpusher</groupId>
-                <artifactId>mpush-client</artifactId>
-                <version>0.9.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.mpusher</groupId>
-                <artifactId>mpush-boot</artifactId>
-                <version>0.9.0</version>
-            </dependency>
 
-            <!--阿里云短信 -->
-            <!--<dependency>
-                <groupId>com.aliyun</groupId>
-                <artifactId>aliyun-java-sdk-core</artifactId>
-                <version>2.4.2</version>
-            </dependency>-->
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>aliyun-java-sdk-sms</artifactId>
                 <version>3.0.0-rc1</version>
-            </dependency>
-
-            <!--阿里云语音短信 -->
-            <dependency>
-                <groupId>com.aliyun</groupId>
-                <artifactId>taobao-sdk-java-auto_1455552377940</artifactId>
-                <version>20170607</version>
             </dependency>
 
             <dependency>
@@ -241,7 +216,7 @@
                 <artifactId>quartz</artifactId>
                 <version>2.2.1</version>
             </dependency>
-            <dependency><!-- 该依赖必加，里面有sping对schedule的支持 -->
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context-support</artifactId>
             </dependency>
@@ -262,37 +237,11 @@
                 <version>1.0.0</version>
             </dependency>
 
-            <!-- 微信支付SDK -->
-            <dependency>
-                <groupId>com.github.wxpay</groupId>
-                <artifactId>wxpay-sdk</artifactId>
-                <version>0.0.3</version>
-            </dependency>
-
-            <!--支付宝-->
-            <dependency>
-                <groupId>fakepath</groupId>
-                <artifactId>alipay-sdk</artifactId>
-                <version>20161213173952</version>
-            </dependency>
             <dependency>
                 <groupId>org.apache.ant</groupId>
                 <artifactId>ant</artifactId>
                 <version>1.8.1</version>
             </dependency>
-            <!-- 饿了么全双工消息推送 -->
-            <dependency>
-                <groupId>me.ele.openapi</groupId>
-                <artifactId>eleme-java-ws-openapi</artifactId>
-                <version>1.0.2</version>
-            </dependency>
-
-            <dependency>
-                <groupId>dom4j</groupId>
-                <artifactId>dom4j</artifactId>
-                <version>1.6.1</version>
-            </dependency>
-            <!-- Mock测试 -->
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-mock</artifactId>
@@ -311,7 +260,6 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- 接口编辑工具 -->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
@@ -343,27 +291,6 @@
                 <artifactId>bcprov-jdk15on</artifactId>
                 <version>1.59</version>
             </dependency>
-
-            <dependency>
-                <groupId>org.apache.ignite</groupId>
-                <artifactId>ignite-core</artifactId>
-                <version>2.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ignite</groupId>
-                <artifactId>ignite-indexing</artifactId>
-                <version>2.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ignite</groupId>
-                <artifactId>ignite-spring</artifactId>
-                <version>2.3.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.ignite</groupId>
-                <artifactId>ignite-spring-data</artifactId>
-                <version>2.3.0</version>
-            </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -373,12 +300,6 @@
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
                 <version>3.11.0</version>
-            </dependency>
-            <!--小米推送-->
-            <dependency>
-                <groupId>com.xiaomi.mipush.sdk</groupId>
-                <artifactId>mipush</artifactId>
-                <version>2.2.22</version>
             </dependency>
         </dependencies>
 

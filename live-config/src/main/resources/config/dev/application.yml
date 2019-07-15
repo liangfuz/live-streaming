@@ -19,3 +19,8 @@ spring:
     generate-ddl: true
     hibernate.ddl-auto: update
     database-platform: org.hibernate.dialect.MySQL5Dialect
+  redis:
+    host: xxxxxx
+    password: xxxx
+    database: 0
+    timeout: 3000
