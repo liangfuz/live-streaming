@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property name="LOG_HOME" value="${LOG_PATH:-${java.io.tmpdir:-/tmp}}"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	
+	<!-- 按照每天生成日志文件 -->
+    <appender name="FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+    	<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+	      <!-- rollover daily -->
+	      <fileNamePattern>${LOG_HOME}/live-registry-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+	       <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+	       <maxFileSize>20MB</maxFileSize>    
+	       <maxHistory>60</maxHistory>
+	       <totalSizeCap>20GB</totalSizeCap>
+	    </rollingPolicy>
+
+    </appender>
+	
+	<springProfile name="dev,test">
+		<logger name="com.easy.live" level="DEBUG" />
+		<logger name="org.springframework" level="INFO"/>
+		<logger name="com.netflix" level="INFO"/>
+		<logger name="org.apache" level="INFO"/>
+		<logger name="org.mongodb.driver" level="INFO"/>
+	</springProfile>
+
+	<springProfile name="prod">
+		<logger name="com.easy.live" level="DEBUG" />
+		<logger name="org.springframework" level="INFO"/>
+		<logger name="com.netflix" level="INFO"/>
+		<logger name="org.apache" level="INFO"/>
+		<logger name="org.mongodb.driver" level="INFO"/>
+	</springProfile>
+	 
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+	
+</configuration>

@@ -1,0 +1,21 @@
+spring:
+  http:
+    multipart:
+      max-file-size: 50Mb
+      max-request-size: 100Mb
+      enabled: true
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    name: habits
+    url: jdbc:mysql://x.x.x.x:3306/video_live?useUnicode=true&characterEncoding=UTF-8
+    username: xxx
+    password: xxxx
+  jpa:
+    show-sql: false
+    generate-ddl: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect

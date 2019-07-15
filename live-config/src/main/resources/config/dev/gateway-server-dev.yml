@@ -1,0 +1,14 @@
+
+zuul:
+  #add-host-header: true #网关在进行请求路由转发前为请求设置Host头信息
+  ignoredHeaders: Origin,Access-Control-Allow-Origin
+  sensitiveHeaders: Origin,Cookie,Set-Cookie,Authorization
+  semaphore:
+    max-semaphores: 5000
+  routes:
+    video-route:
+      path: /video-server/**
+      serviceId: video-server
+    user-route:
+      path: /user-server/**
+      serviceId: user-server

@@ -1,0 +1,30 @@
+easy:
+  eurekaServer: http://live.registry.com:8001/eureka/
+
+
+server:
+  port: 8002
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+          default-label: dev
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${easy.eurekaServer}
+

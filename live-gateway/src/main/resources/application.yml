@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gateway-server
+  profiles:
+    active: dev
+
+server:
+  port: 8003
+
+management:
+  security:
+    enabled: false

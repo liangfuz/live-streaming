@@ -1,0 +1,25 @@
+easy:
+   eurekaServer: http://live.registry.com:8001/eureka/
+
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    preferIpAddress: true
+    hostname: live.registry.com
+    metadataMap:
+      cluster: MAIN
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+       defaultZone: ${easy.eurekaServer}
+
+spring:
+  cloud:
+    config:
+      profile: dev
+      discovery: 
+        enabled: true
+        serviceId: config-server
+      
+

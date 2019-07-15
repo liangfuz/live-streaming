@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: video-server
+  profiles:
+    active: dev
+
+server:
+  port: 8010
+

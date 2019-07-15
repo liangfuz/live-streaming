@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: registry-server
+
+server:
+  port: 8001
+
+eureka:
+  instance:
+    hostname: live.registry.com
+  server:
+    responseCacheUpdateInvervalMs: 3000
+    responseCacheAutoExpirationInSeconds: 180
+    evictionIntervalTimerInMs: 3000
+    enableSelfPreservation: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://live.registry.com:8001/eureka/
