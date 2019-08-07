@@ -1,7 +1,7 @@
 package com.easy.live.streaming.user.service;
 
 import com.easy.live.streaming.servants.protocol.input.user.UserInput;
-import com.easy.live.streaming.servants.protocol.output.BaseOutput;
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.user.UserOutput;
 
 /**
@@ -25,4 +25,11 @@ public interface UserService {
      * @return
      */
     BaseOutput userLogin(UserInput input);
+
+    /**
+     * 用户登录
+     *
+     * @return
+     */
+    BaseOutput userLogout();
 }

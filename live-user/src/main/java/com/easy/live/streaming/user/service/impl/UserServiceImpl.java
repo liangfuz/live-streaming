@@ -4,7 +4,7 @@ import com.easy.live.streaming.common.config.Constants;
 import com.easy.live.streaming.data.entity.user.LiveUser;
 import com.easy.live.streaming.data.service.user.LiveUserService;
 import com.easy.live.streaming.servants.protocol.input.user.UserInput;
-import com.easy.live.streaming.servants.protocol.output.BaseOutput;
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.user.UserOutput;
 import com.easy.live.streaming.user.service.UserService;
 import org.apache.shiro.SecurityUtils;
@@ -60,5 +60,22 @@ public class UserServiceImpl implements UserService {
             return new BaseOutput(Constants.RetMsg.FAIL.code,"用户名或密码不正确!");
         }
         return new BaseOutput(Constants.RetMsg.SUCCESS.code,"登录成功!");
+    }
+
+    /**
+     * 用户登出
+     *
+     * @return
+     */
+    @Override
+    public BaseOutput userLogout() {
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.logout();
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+            return new BaseOutput(Constants.RetMsg.FAIL.code,"登出失败!");
+        }
+        return new BaseOutput(Constants.RetMsg.SUCCESS.code,"登出成功!");
     }
 }

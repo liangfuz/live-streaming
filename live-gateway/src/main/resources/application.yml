@@ -3,7 +3,6 @@ spring:
     name: gateway-server
   profiles:
     active: dev
-
 server:
   port: 8003
 

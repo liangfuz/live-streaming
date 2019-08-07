@@ -1,9 +1,9 @@
 package com.easy.live.streaming.servants.api.video.callback;
 
 import com.easy.live.streaming.common.config.Constants;
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.api.video.servant.VideoRoomServant;
 import com.easy.live.streaming.servants.protocol.input.video.VideoRoomInput;
-import com.easy.live.streaming.servants.protocol.output.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.video.VideoRoomOutput;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;

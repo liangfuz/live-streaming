@@ -20,12 +20,12 @@ public class LiveUserService extends BaseService<LiveUser,Integer> {
 
     public LiveUser findLiveUserByName(String name){
         Map<String, Object> searchParams = new HashMap<>();
-        searchParams.put("name", name);
+        searchParams.put("EQ_name", name);
         LiveUser one = null;
         try {
             one = findOne(searchParams);
         }catch (Exception e){
-            log.error("查询出错，", e.getMessage());
+            log.error("查询出错:{}", e.getMessage());
         }
         return one;
     }

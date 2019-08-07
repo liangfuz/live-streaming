@@ -24,3 +24,6 @@ spring:
     password: xxxx
     database: 0
     timeout: 3000
+    port: 1218
+  session:
+    store-type: redis

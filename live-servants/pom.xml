@@ -25,6 +25,10 @@
             <artifactId>live-common</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.easy</groupId>
+            <artifactId>live-data</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-hystrix</artifactId>
         </dependency>

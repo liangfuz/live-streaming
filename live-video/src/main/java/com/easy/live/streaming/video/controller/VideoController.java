@@ -4,7 +4,7 @@ import com.easy.live.streaming.data.entity.video.VideoLiveRoom;
 import com.easy.live.streaming.data.service.video.VideoLiveRoomService;
 import com.easy.live.streaming.servants.api.video.servant.VideoRoomServant;
 import com.easy.live.streaming.servants.protocol.input.video.VideoRoomInput;
-import com.easy.live.streaming.servants.protocol.output.BaseOutput;
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.video.VideoRoomOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;

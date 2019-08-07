@@ -1,9 +1,7 @@
 spring:
   application:
     name: video-server
-  profiles:
-    active: dev
 
 server:
-  port: 8010
+  port: 8011
 

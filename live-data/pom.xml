@@ -50,6 +50,14 @@
             <artifactId>shiro-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.easy</groupId>
             <artifactId>live-common</artifactId>
         </dependency>

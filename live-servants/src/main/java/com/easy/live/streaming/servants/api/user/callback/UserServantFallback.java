@@ -1,9 +1,9 @@
 package com.easy.live.streaming.servants.api.user.callback;
 
 import com.easy.live.streaming.common.config.Constants;
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.api.user.servant.UserServant;
 import com.easy.live.streaming.servants.protocol.input.user.UserInput;
-import com.easy.live.streaming.servants.protocol.output.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.user.UserOutput;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +29,12 @@ public class UserServantFallback implements FallbackFactory<UserServant> {
             public BaseOutput userLogin(UserInput input) {
                 log.error("用户登录失败, input:{}", input);
                 return new BaseOutput<>(Constants.RetMsg.FAIL.getCode(), "用户登录失败");
+            }
+
+            @Override
+            public BaseOutput userLogout() {
+                log.error("用户登出失败");
+                return new BaseOutput<>(Constants.RetMsg.FAIL.getCode(), "用户登出失败");
             }
         };
     }

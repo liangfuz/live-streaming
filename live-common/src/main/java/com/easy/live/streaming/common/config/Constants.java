@@ -8,7 +8,9 @@ public class Constants {
     public enum RetMsg{
         SUCCESS(200, "操作成功"),
 
-        FAIL(500, "操作失败");
+        FAIL(500, "操作失败"),
+
+        EXCEPTION_LOGIN(301, "未登录异常");
 
         public Integer code;
 
