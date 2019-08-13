@@ -29,6 +29,6 @@ public interface VideoRoomServant {
      * @param input
      * @return
      */
-    @RequestMapping("/live/video/room/videoRoomList")
+    @RequestMapping("/open/live/video/room/videoRoomList")
     BaseOutput<List<VideoRoomOutput>> videoRoomList(VideoRoomInput input);
 }

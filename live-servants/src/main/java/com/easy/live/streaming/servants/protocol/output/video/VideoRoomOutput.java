@@ -10,4 +10,19 @@ import lombok.Data;
 
 @Data
 public class VideoRoomOutput {
+
+    //房间名称
+    private String roomName;
+
+    //标题
+    private String title;
+
+    //封面
+    private String cover;
+
+    //类型
+    private Integer cateId;
+
+    //直播URL
+    private String liveUrl;
 }

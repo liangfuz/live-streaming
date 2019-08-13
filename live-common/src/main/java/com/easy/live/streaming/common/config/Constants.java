@@ -5,6 +5,10 @@ package com.easy.live.streaming.common.config;
  */
 public class Constants {
 
+    public static final String LIVE_URL_PREFIX = "rtmp://192.168.10.110:1935/live/room";
+
+    public static final String LOGIN_CACHE = "LOGIN_CACHE_";
+
     public enum RetMsg{
         SUCCESS(200, "操作成功"),
 

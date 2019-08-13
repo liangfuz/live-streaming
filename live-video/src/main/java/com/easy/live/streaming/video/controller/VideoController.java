@@ -1,5 +1,8 @@
 package com.easy.live.streaming.video.controller;
 
+import com.easy.live.streaming.common.config.Constants;
+import com.easy.live.streaming.data.cache.ThreadLocalUserCache;
+import com.easy.live.streaming.data.cache.UserCache;
 import com.easy.live.streaming.data.entity.video.VideoLiveRoom;
 import com.easy.live.streaming.data.service.video.VideoLiveRoomService;
 import com.easy.live.streaming.servants.api.video.servant.VideoRoomServant;
@@ -9,6 +12,7 @@ import com.easy.live.streaming.servants.protocol.output.video.VideoRoomOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,15 +34,15 @@ public class VideoController implements VideoRoomServant {
      */
     @Override
     public BaseOutput<VideoRoomOutput> addVideoRoom(VideoRoomInput input) {
+        UserCache userCache = ThreadLocalUserCache.getUserCache();
         VideoLiveRoom videoLiveRoom = new VideoLiveRoom();
-        videoLiveRoom.setTitle("title");
-        videoLiveRoom.setCover("cover");
-        videoLiveRoom.setRoomName("name");
-        videoLiveRoom.setCateId(1);
-        videoLiveRoom.setUserId(1);
-        videoLiveRoom.setViewerCount(1);
+        videoLiveRoom.setTitle(input.getTitle());
+        videoLiveRoom.setCover(input.getCover());
+        videoLiveRoom.setRoomName(input.getRoomName());
+        videoLiveRoom.setCateId(input.getCateId());
+        videoLiveRoom.setUserId(userCache.getUserId());
         videoLiveRoomService.save(videoLiveRoom);
-        return null;
+        return new BaseOutput<>(Constants.RetMsg.SUCCESS.code, Constants.RetMsg.SUCCESS.msg);
     }
 
     /**
@@ -49,6 +53,17 @@ public class VideoController implements VideoRoomServant {
      */
     @Override
     public BaseOutput<List<VideoRoomOutput>> videoRoomList(VideoRoomInput input) {
-        return null;
+        List<VideoRoomOutput> list = new ArrayList<>();
+        List<VideoLiveRoom> all = videoLiveRoomService.findAll();
+        all.forEach(videoLiveRoom -> {
+            VideoRoomOutput videoRoomOutput = new VideoRoomOutput();
+            videoRoomOutput.setTitle(videoLiveRoom.getTitle());
+            videoRoomOutput.setCateId(videoLiveRoom.getCateId());
+            videoRoomOutput.setCover(videoLiveRoom.getCover());
+            videoRoomOutput.setRoomName(videoLiveRoom.getRoomName());
+            videoRoomOutput.setLiveUrl(Constants.LIVE_URL_PREFIX+videoLiveRoom.getId());
+            list.add(videoRoomOutput);
+        });
+        return new BaseOutput<>(Constants.RetMsg.SUCCESS.code, Constants.RetMsg.SUCCESS.msg, list);
     }
 }

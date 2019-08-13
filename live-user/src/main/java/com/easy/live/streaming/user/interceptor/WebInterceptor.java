@@ -23,6 +23,7 @@ public class WebInterceptor extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new AcquireUserInfoInteceptor());
         registry.addInterceptor(accessLogInterceptor()).addPathPatterns("/**");
     }
 }
