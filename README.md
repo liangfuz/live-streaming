@@ -1,6 +1,7 @@
 # live-streaming
 Spring cloud实现直播搭建
 
+```
 ├─ live-common                                      //基础工具
 ├─ live-config                                      //配置中心服务
 │  │     └─ resources
@@ -37,3 +38,4 @@ Spring cloud实现直播搭建
 │  │  └─...
 ├─ live-user                                        //用户服务
 └─ live-video                                       //视频直播服务
+```
