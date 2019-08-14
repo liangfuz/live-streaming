@@ -6,10 +6,16 @@ zuul:
     max-semaphores: 5000
   routes:
     video-route:
-      path: /gw/video-server/**
+      path: /video-server/**
       serviceId: video-server
     user-route:
-      path: /gw/user-server/**
+      path: /user-server/**
       serviceId: user-server
+    auth-route:
+      path: /auth-server/**
+      serviceId: auth-server
 error:
   path: /gw/error
+
+server:
+  connection-timeout: 3000

@@ -1,7 +1,7 @@
 package com.easy.live.streaming.servants.api.video.servant;
 
 import com.easy.live.streaming.data.bean.BaseOutput;
-import com.easy.live.streaming.servants.api.video.callback.VideoRoomServantFallback;
+import com.easy.live.streaming.servants.api.video.fallback.VideoRoomServantFallback;
 import com.easy.live.streaming.servants.protocol.output.video.VideoRoomOutput;
 import com.easy.live.streaming.servants.protocol.input.video.VideoRoomInput;
 import org.springframework.cloud.netflix.feign.FeignClient;

@@ -1,4 +1,4 @@
-package com.easy.live.streaming.data.config;
+package com.easy.live.streaming.auth.config;
 
 import com.easy.live.streaming.data.entity.user.LiveUser;
 import com.easy.live.streaming.data.service.user.LiveUserService;

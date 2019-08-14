@@ -51,6 +51,10 @@
             <groupId>com.easy</groupId>
             <artifactId>live-data</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.easy</groupId>
+            <artifactId>live-servants</artifactId>
+        </dependency>
     </dependencies>
 
 

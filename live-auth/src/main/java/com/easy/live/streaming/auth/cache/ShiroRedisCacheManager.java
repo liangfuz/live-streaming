@@ -1,4 +1,4 @@
-package com.easy.live.streaming.data.cache;
+package com.easy.live.streaming.auth.cache;
 
 import org.apache.shiro.cache.AbstractCacheManager;
 import org.apache.shiro.cache.Cache;

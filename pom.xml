@@ -16,6 +16,7 @@
         <module>live-video</module>
         <module>live-data</module>
         <module>live-common</module>
+        <module>live-auth</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -17,19 +17,4 @@ public interface UserService {
      * @return
      */
     BaseOutput<UserOutput> createUser(UserInput input);
-
-    /**
-     * 用户登录
-     *
-     * @param input
-     * @return
-     */
-    BaseOutput userLogin(UserInput input);
-
-    /**
-     * 用户登录
-     *
-     * @return
-     */
-    BaseOutput userLogout();
 }

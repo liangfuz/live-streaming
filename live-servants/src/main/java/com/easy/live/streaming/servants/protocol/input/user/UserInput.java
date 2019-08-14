@@ -18,5 +18,5 @@ public class UserInput {
     private String email;
     private String phone;
     private boolean useFlag;
-
+    private String sessionId;
 }

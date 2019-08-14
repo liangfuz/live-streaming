@@ -1,8 +1,8 @@
 package com.easy.live.streaming.user.controller;
 
+import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.api.user.servant.UserServant;
 import com.easy.live.streaming.servants.protocol.input.user.UserInput;
-import com.easy.live.streaming.data.bean.BaseOutput;
 import com.easy.live.streaming.servants.protocol.output.user.UserOutput;
 import com.easy.live.streaming.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,28 +31,5 @@ public class UserController implements UserServant {
     public BaseOutput<UserOutput> createUser(UserInput input) {
         log.debug("创建用户,input:{}", input);
         return userService.createUser(input);
-    }
-
-    /**
-     * 用户登录
-     *
-     * @param input
-     * @return
-     */
-    @Override
-    public BaseOutput userLogin(UserInput input) {
-        log.debug("用户登录,input:{}", input);
-        return userService.userLogin(input);
-    }
-
-    /**
-     * 用户登出
-     *
-     * @return
-     */
-    @Override
-    public BaseOutput userLogout() {
-        log.debug("用户登出");
-        return userService.userLogout();
     }
 }

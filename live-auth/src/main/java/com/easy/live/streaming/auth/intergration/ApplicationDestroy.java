@@ -1,4 +1,4 @@
-package com.easy.live.streaming.user.intergration;
+package com.easy.live.streaming.auth.intergration;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,6 @@ public class ApplicationDestroy implements DisposableBean {
 	
 	@Override
 	public void destroy() throws Exception {
-		logger.info("System [User] destroy");
+		logger.info("System [Auth] destroy");
 	}
 }

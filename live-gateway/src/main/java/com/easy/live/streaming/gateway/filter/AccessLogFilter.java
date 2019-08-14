@@ -1,13 +1,10 @@
 package com.easy.live.streaming.gateway.filter;
 
-import com.easy.live.streaming.common.config.Constants;
 import com.easy.live.streaming.data.cache.SimpleCacheService;
-import com.easy.live.streaming.data.cache.UserCache;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -44,16 +41,9 @@ public class AccessLogFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest request = requestContext.getRequest();
+        requestContext.addZuulRequestHeader("sessionId", request.getSession().getId());
         String requestURI = request.getRequestURI();
         log.debug("通过网关请求接口:{}", requestURI);
-        String sessionId = request.getSession().getId();
-        if (StringUtils.isNotEmpty(sessionId)){
-            UserCache userCache = cacheService.get(Constants.LOGIN_CACHE + sessionId, UserCache.class);
-            if (userCache != null){
-                requestContext.addZuulRequestHeader("userId", userCache.getUserId()+"");
-            }
-            requestContext.addZuulRequestHeader("sessionId", sessionId);
-        }
         return null;
     }
 }

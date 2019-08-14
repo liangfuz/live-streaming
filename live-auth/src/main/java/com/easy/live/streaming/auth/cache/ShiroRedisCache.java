@@ -1,4 +1,4 @@
-package com.easy.live.streaming.data.cache;
+package com.easy.live.streaming.auth.cache;
 
 import com.easy.live.streaming.common.util.jpa.SerializeUtils;
 import com.google.common.collect.Sets;

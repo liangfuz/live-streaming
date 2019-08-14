@@ -25,14 +25,15 @@ Spring cloud实现直播搭建
 ├─ live-gateway                                     //网关服务
 │  │  ├─ controller                                 //全局错误处理
 │  │  │  └─ HandleErrorController.java
-│  │  ├─ filter                                     //网关过滤器
-│  │  │  ├─ AccessLogFilter.java
-│  │  │  ├─ HandleZuulExceptionFilter.java
-│  │  │  └─ LoginFilter.java
+│  │  └─ filter                                     //网关过滤器
+│  │     ├─ AccessLogFilter.java
+│  │     ├─ HandleZuulExceptionFilter.java
+│  │     └─ LoginFilter.java
 ├─ live-registry                                    //注册中心服务
+├─ live-auth                                        //鉴权服务
 ├─ live-servants                                    //API模块
-│  │  │  ├─ user
-│  │  │  ├─ video
-│  │  │  └─...
+│  │  ├─ user
+│  │  ├─ video
+│  │  └─...
 ├─ live-user                                        //用户服务
 └─ live-video                                       //视频直播服务

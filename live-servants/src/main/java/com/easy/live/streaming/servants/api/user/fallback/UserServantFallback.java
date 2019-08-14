@@ -1,4 +1,4 @@
-package com.easy.live.streaming.servants.api.user.callback;
+package com.easy.live.streaming.servants.api.user.fallback;
 
 import com.easy.live.streaming.common.config.Constants;
 import com.easy.live.streaming.data.bean.BaseOutput;
@@ -23,18 +23,6 @@ public class UserServantFallback implements FallbackFactory<UserServant> {
             public BaseOutput<UserOutput> createUser(UserInput input) {
                 log.error("创建用户失败, input:{}", input);
                 return new BaseOutput<>(Constants.RetMsg.FAIL.getCode(), "创建用户失败");
-            }
-
-            @Override
-            public BaseOutput userLogin(UserInput input) {
-                log.error("用户登录失败, input:{}", input);
-                return new BaseOutput<>(Constants.RetMsg.FAIL.getCode(), "用户登录失败");
-            }
-
-            @Override
-            public BaseOutput userLogout() {
-                log.error("用户登出失败");
-                return new BaseOutput<>(Constants.RetMsg.FAIL.getCode(), "用户登出失败");
             }
         };
     }

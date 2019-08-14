@@ -1,6 +1,6 @@
-package com.easy.live.streaming.data.config;
+package com.easy.live.streaming.auth.config;
 
-import com.easy.live.streaming.data.cache.ShiroRedisCacheManager;
+import com.easy.live.streaming.auth.cache.ShiroRedisCacheManager;
 import com.google.common.collect.Maps;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -46,7 +46,6 @@ public class ShiroConfig {
         Map<String, String> chains = Maps.newHashMap();
         chains.put("/**", "authc,perms");
         chains.put("/open/**", "anon");
-        chains.put("/gw/**", "anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(chains);
         return shiroFilterFactoryBean;
     }

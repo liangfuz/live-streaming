@@ -1,8 +1,7 @@
-package com.easy.live.streaming.user.interceptor;
+package com.easy.live.streaming.video.inteceptor;
 
 import com.easy.live.streaming.data.filter.AcquireUserInfoInterceptor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -17,14 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @AutoConfigureAfter(WebMvcConfigurerAdapter.class)
 public class WebInterceptor extends WebMvcConfigurerAdapter {
 
-    @Bean
-    public AccessLogInterceptor accessLogInterceptor(){
-        return new AccessLogInterceptor();
-    }
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AcquireUserInfoInterceptor());
-        registry.addInterceptor(accessLogInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new AcquireUserInfoInterceptor()).addPathPatterns("/**");
     }
 }

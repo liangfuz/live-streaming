@@ -1,6 +1,5 @@
-package com.easy.live.streaming.user.interceptor;
+package com.easy.live.streaming.auth.interceptor;
 
-import com.easy.live.streaming.data.filter.AcquireUserInfoInterceptor;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +23,6 @@ public class WebInterceptor extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AcquireUserInfoInterceptor());
         registry.addInterceptor(accessLogInterceptor()).addPathPatterns("/**");
     }
 }

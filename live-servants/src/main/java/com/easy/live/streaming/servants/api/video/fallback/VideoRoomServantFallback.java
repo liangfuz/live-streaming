@@ -1,4 +1,4 @@
-package com.easy.live.streaming.servants.api.video.callback;
+package com.easy.live.streaming.servants.api.video.fallback;
 
 import com.easy.live.streaming.common.config.Constants;
 import com.easy.live.streaming.data.bean.BaseOutput;
