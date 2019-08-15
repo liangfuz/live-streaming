@@ -23,6 +23,7 @@ public class WebInterceptor extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(accessLogInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(accessLogInterceptor()).addPathPatterns("/**")
+                .excludePathPatterns("/swagger-resources/**");
     }
 }
