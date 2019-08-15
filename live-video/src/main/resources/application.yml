@@ -3,5 +3,5 @@ spring:
     name: video-server
 
 server:
-  port: 8011
+  port: 8013
 

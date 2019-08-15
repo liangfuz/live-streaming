@@ -3,4 +3,4 @@ spring:
     name: user-server
 
 server:
-  port: 8010
+  port: 8012

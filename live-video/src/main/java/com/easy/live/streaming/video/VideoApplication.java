@@ -6,6 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Description:视频直播
@@ -18,6 +19,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = "com.easy")
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableSwagger2
 public class VideoApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(VideoApplication.class).web(true).run(args);

@@ -10,6 +10,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Description:鉴权服务
@@ -22,6 +23,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = "com.easy")
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableSwagger2
 public class AuthApplication {
     public static void main(String[] args) {
         new SpringApplicationBuilder(AuthApplication.class).web(true).run(args);
