@@ -13,22 +13,22 @@ import lombok.Data;
 @Data
 @ApiModel(description = "用户参数")
 public class UserInput {
-    @ApiModelProperty(value = "密码", dataType = "string")
+    @ApiModelProperty(name = "密码", dataType = "string")
     private String password;
-    @ApiModelProperty(name = "用户头衔", value = "直播区第一coder", dataType = "string", example = "直播区第一coder")
+    @ApiModelProperty(name = "用户头衔", dataType = "string", example = "直播区第一coder")
     private String title;
-    @ApiModelProperty(value = "暂未启用")
+    @ApiModelProperty(name = "暂未启用")
     private String avatar;
-    @ApiModelProperty(value = "用户ID", dataType = "int")
+    @ApiModelProperty(name = "用户ID", dataType = "int")
     private Integer id;
-    @ApiModelProperty(name = "用户名称", value = "沉默的coder", dataType = "string", example = "沉默的coder")
+    @ApiModelProperty(name = "用户名称",  dataType = "string", example = "沉默的coder")
     private String name;
-    @ApiModelProperty(value = "暂未启用", dataType = "string")
+    @ApiModelProperty(name = "暂未启用", dataType = "string")
     private String email;
-    @ApiModelProperty(value = "暂未启用", dataType = "string")
+    @ApiModelProperty(name = "暂未启用", dataType = "string")
     private String phone;
-    @ApiModelProperty(value = "暂未启用", dataType = "string")
+    @ApiModelProperty(name = "暂未启用", dataType = "string")
     private boolean useFlag;
-    @ApiModelProperty(value = "前端无用", dataType = "string")
+    @ApiModelProperty(name = "前端无用", dataType = "string")
     private String sessionId;
 }

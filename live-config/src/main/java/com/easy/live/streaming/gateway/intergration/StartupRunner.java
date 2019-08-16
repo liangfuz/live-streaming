@@ -10,6 +10,6 @@ public class StartupRunner implements CommandLineRunner {
 
 	@Override
     public void run(String... args) throws Exception {
-		logger.warn("配置中心服务启动成功");
+		logger.info("配置中心服务启动成功");
     }
 }

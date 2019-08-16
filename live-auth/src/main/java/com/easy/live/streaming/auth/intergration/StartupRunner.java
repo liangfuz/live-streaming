@@ -17,8 +17,8 @@ public class StartupRunner implements CommandLineRunner {
 
 	@Override
     public void run(String... args) {
-		logger.warn("spring.profiles.active:{}",env);
-		logger.warn("spring.cloud.config.profile:{}",configEnv);
-		logger.warn("鉴权服务启动成功");
+		logger.info("spring.profiles.active:{}",env);
+		logger.info("spring.cloud.config.profile:{}",configEnv);
+		logger.info("鉴权服务启动成功");
     }
 }

@@ -11,6 +11,6 @@ public class StartupRunner implements CommandLineRunner {
 
 	@Override
     public void run(String... args) throws Exception {
-		logger.warn("注册中心服务启动成功");
+		logger.info("注册中心服务启动成功");
     }
 }

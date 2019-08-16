@@ -9,7 +9,7 @@
     	<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
             <pattern>${FILE_LOG_PATTERN}</pattern>
-        </encoder>
+		</encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 	      <!-- rollover daily -->
 	      <fileNamePattern>${LOG_HOME}/live-registry-%d{yyyy-MM-dd}.%i.log</fileNamePattern>

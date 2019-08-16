@@ -46,6 +46,10 @@ public class ShiroConfig {
         Map<String, String> chains = Maps.newHashMap();
         chains.put("/**", "authc,perms");
         chains.put("/open/**", "anon");
+        chains.put("/swagger-resources/**", "anon");
+        chains.put("/swagger-ui.html", "anon");
+        chains.put("/v2/**", "anon");
+        chains.put("/webjars/**", "anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(chains);
         return shiroFilterFactoryBean;
     }
