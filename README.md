@@ -19,12 +19,12 @@ PS:有空逐步集成服务治理zipkin，elk，<a href="https://blog.developabc
 │  │           └─ test
 │  │              └─ ...
 ├─ live-data                                        //数据模型
-│     ├─ bean
-│     ├─ cache
-│     ├─ config
-│     ├─ entity
-│     ├─ repository
-│     └─ service
+│  │  ├─ bean
+│  │  ├─ cache
+│  │  ├─ config
+│  │  ├─ entity
+│  │  ├─ repository
+│  │  └─ service
 ├─ live-dependencies                                //公共依赖包
 │  └─ pom.xml
 ├─ live-gateway                                     //网关服务  port:8003
