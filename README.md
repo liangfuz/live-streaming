@@ -1,7 +1,7 @@
 # Spring cloud实现直播搭建
 
 目前服务包括注册中心，配置中心，网关服务，鉴权服务，用户服务以及视频直播间服务
-注册中心使用eureka，网关使用zuul，鉴权使用shiro，ORM框架采用hibernate（生产推荐mybatis）
+注册中心使用eureka，网关使用zuul，鉴权使用shiro，ORM框架采用hibernate
 直播采用rtmp协议（具体搭建请看我的博客<a href="https://blog.developabc.com/2019/05/29/Video-RTMP.html">Nginx+RTMP搭建流媒体直播服务器</a>
 
 PS:有空逐步集成服务治理zipkin，elk，<a href="https://blog.developabc.com/2019/04/01/docker-install.html">docker打包</a>等
